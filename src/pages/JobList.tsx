@@ -59,7 +59,6 @@ import {
 import { Input } from '../components/ui/input';
 import {
   Search,
-  Filter,
   Loader2,
   SlidersHorizontal,
   LayoutGrid,
@@ -475,7 +474,7 @@ export default function JobList() {
                   key={job._id}
                   job={job}
                   onDelete={deleteJob}
-                  onReanalyse={reanalyseJob}
+                  // onReanalyse={reanalyseJob}
                 />
               ))}
             </div>

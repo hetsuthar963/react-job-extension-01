@@ -267,7 +267,7 @@ export type Job = {
 type Props = {
   job: Job;
   onDelete: (id: string) => void;
-  onReanalyse: (id: string) => void;
+  // onReanalyse: (id: string) => void;
 };
 
 /* ---------- helpers --------------------------------------------------- */
@@ -282,7 +282,7 @@ const LABEL: Record<Job['priority'], string> = {
   LOW: '🟢 Low Priority',
 };
 
-export default function JobCard({ job, onDelete, onReanalyse }: Props) {
+export default function JobCard({ job, onDelete }: Props) {
   const { _id, title, company, location, summary, insights, skills, source_url, priority } = job;
 
   /* ---------- inner helpers ----------------------------------------- */

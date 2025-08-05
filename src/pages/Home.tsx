@@ -52,6 +52,7 @@
 
 
 /* src/pages/Home.tsx */
+/*
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import JobCard from '../components/JobCard'
@@ -87,6 +88,7 @@ export default function Home() {
   // re-analyze placeholder ----------------------------------------------
   const handleReanalyze = (id: string) => {
     /* TODO: call /scrape or another endpoint */
+    /*
   }
 
   return (
@@ -102,3 +104,4 @@ export default function Home() {
     </div>
   )
 }
+*/
