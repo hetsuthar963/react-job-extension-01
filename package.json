@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+    "test": "echo 'No tests specified yet' && exit 0"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
