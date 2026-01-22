@@ -1,18 +1,20 @@
-# Use a lightweight Node.js image
-FROM node:20-slim
+# 1. Use an official Node.js runtime as a parent image
+FROM node:20
 
-# Set the working directory inside the container
-WORKDIR /app
+# 2. Set the working directory in the container
+WORKDIR /usr/src/app
 
-# Copy package files and install dependencies
+# 3. Copy package.json and package-lock.json
 COPY package*.json ./
-RUN npm ci
 
-# Copy the rest of your code
+# 4. Install dependencies
+RUN npm install
+
+# 5. Bundle app source
 COPY . .
 
-# Build your project (if needed)
+# 6. Build the project (important for React/Node projects)
 RUN npm run build --if-present
 
-# The command to start your app (change 'start' to your actual start script)
-CMD ["npm", "start"]
+# 7. Start the application
+CMD [ "npm", "start" ]
