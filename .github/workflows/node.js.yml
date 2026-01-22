@@ -11,11 +11,10 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: ${{matrix.os}}
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
         node-version: [24.12.0]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
@@ -29,3 +28,10 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest  
+    steps:                  
+      - name: Deploying code
+        run: echo "The build job just finished. Now I am starting the publish job!"
