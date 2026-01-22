@@ -244,7 +244,7 @@
 // }
 
 // src/components/JobCard.tsx
-import { ExternalLink, Trash2, RefreshCw } from 'lucide-react';
+import { ExternalLink, Trash2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
@@ -325,7 +325,7 @@ export default function JobCard({ job, onDelete }: Props) {
     <Link
       to={`/jobs/${_id}`} // This handles navigation to the detail page
       className="block"
-      onClick={(e) => {
+      onClick={() => {
         // Optional: Add logic here if needed before navigation
         // e.preventDefault(); // Uncomment to prevent navigation for testing
       }}

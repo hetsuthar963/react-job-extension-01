@@ -208,16 +208,16 @@ export default function JobList() {
     }
   };
 
-  const reanalyseJob = async (id: string) => {
-    try {
-      await axios.post(`/jobs/${id}/reanalyse`);
-      const { data } = await axios.get<Job>(`/jobs/${id}`);
-      setJobs(prev => prev.map(j => j._id === id ? data : j));
-    } catch (err) {
-      setError('Failed to re-analyze job. Please try again.');
-      console.error('Error re-analyzing job:', err);
-    }
-  };
+  // const reanalyseJob = async (id: string) => {
+  //   try {
+  //     await axios.post(`/jobs/${id}/reanalyse`);
+  //     const { data } = await axios.get<Job>(`/jobs/${id}`);
+  //     setJobs(prev => prev.map(j => j._id === id ? data : j));
+  //   } catch (err) {
+  //     setError('Failed to re-analyze job. Please try again.');
+  //     console.error('Error re-analyzing job:', err);
+  //   }
+  // };
 
   // --- REVISED Manual Refresh Handler ---
   const handleManualRefresh = () => {
